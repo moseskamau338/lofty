@@ -1,0 +1,237 @@
+---
+import MasterLayout from '../layouts/MasterLayout.astro'
+import HeroMain from '../components/HeroMain.astro'
+---
+<MasterLayout>
+    <HeroMain />
+
+    <!-- Begin home content -->
+    <main class="home-content">
+        <section class="home-preview">
+            <div class="container">
+                <!-- Begin advantages list -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="advantages-list">
+                            <li>
+                                <div class="advantages-ico color-2">
+                                    <img src="/img/paper-plane.png" alt="paper-plane">
+                                </div>
+                                <div class="advantages-desc">
+                                    <h4>Learning & Fun</h4>
+                                    <p>We ensure the learning experience is exciting and fun.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="advantages-ico color-4">
+                                    <img src="/img/baby-food.png" alt="baby-food">
+                                </div>
+                                <div class="advantages-desc">
+                                    <h4>Healthy Meal</h4>
+                                    <p>A healthy meal provides the energy required to sustain the jovial kids.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="advantages-ico color-3">
+                                    <img src="/img/mortarboard.png" alt="mortarboard">
+                                </div>
+                                <div class="advantages-desc">
+                                    <h4>Expert Teachers</h4>
+                                    <p>Seasoned teachers meant to provide the ultimate learning.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- End advantages list -->
+
+                <!-- Begin home preview main -->
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="preview-card">
+                            <div class="preview-card-logo">
+                                <a href="about.html"><img src="/img/new/cRoom.jpg" alt="about-prev"></a>
+                            </div>
+                            <div class="preview-card-desc">
+                                <a href="about.html" class="h2">About Us</a>
+                                <p>Designed with kids in mind, LCCS observes very high standards of learning with a holistic child development approach. Given the varied capabilities of our children, we have integrated Competency-Based and Montessori Curricula, all with a Christian worldview.</p>
+                                <a href="/about-us" class="button color-2">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="preview-card">
+                            <div class="preview-card-logo">
+                                <img src="/img/kidsClass.jpg" alt="benefits-prev">
+                            </div>
+                            <div class="preview-card-desc">
+                                <h2>Our Benefits</h2>
+                                <ul class="benefits-list">
+                                    <li class="color-1"><p>Education, games and activities</p></li>
+                                    <li class="color-2"><p>Teaching kids to express their creativity</p></li>
+                                    <li class="color-3"><p>Gifted & Talented Program</p></li>
+                                    <li class="color-4"><p>Music activities for all</p></li>
+                                    <li class="color-5"><p>Learning languages</p></li>
+                                    <li class="color-1"><p>We encourage an honest, open culture</p></li>
+                                    <li class="color-2"><p>We put children first</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <div class="schedule color-2">
+                            <h3>Working Hours</h3>
+                            <p>Please find time visit us during our open hours.</p>
+                            <ul class="schedule-list">
+                                <li>
+                                    <p>Monday <span>8 AM - 5 PM</span></p>
+                                </li>
+                                <li>
+                                    <p>Tuesday <span>8 AM - 5 PM</span></p>
+                                </li>
+                                <li>
+                                    <p>Wednesday <span>8 AM - 5 PM</span></p>
+                                </li>
+                                <li>
+                                    <p>Thursday <span>8 AM - 5 PM</span></p>
+                                </li>
+                                <li>
+                                    <p>Friday <span>7 AM - 4 PM</span></p>
+                                </li>
+                            </ul>
+                            <a href="/contact-us" class="button color-4">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End home preview main -->
+            </div>
+        </section>
+
+
+
+        <!-- Begin home classes -->
+        <section class="classes-wrap" data-parent-move='true'>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Our Classes: <small>these and <a href="/about-us">more</a></small></h2>
+                        <div class="classes-slider">
+                            <div class="slider color-4" id="classes-slider">
+                                <div class="card">
+                                    <div class="classes-preview-card">
+                                        <a href="#" class="classes-logo"><img src="/img/new/cWork2.jpg" alt="classes"></a>
+
+                                        <div class="classes-text py-4" style="padding-top:25px">
+                                            <a href="#!" class="h3">Art Class</a>
+                                            <p>Children will be introduced to art lessons involving drawing, painting and coloring activities.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="classes-preview-card">
+                                        <a href="#!" class="classes-logo"><img src="/img/new/sports1.jpg" alt="classes"></a>
+
+                                        <div class="classes-text py-4" style="padding-top:25px">
+                                            <a href="single-classes.html" class="h3">Sport Section</a>
+                                            <p>The kids will have fun at the large playground with a variety of games such as football, volley ball, rope games e.t.c.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="classes-preview-card">
+                                        <a href="#" class="classes-logo"><img src="/img/swimming.jpg" alt="classes"></a>
+                                        <div class="classes-text py-4" style="padding-top:25px">
+                                            <a href="#!" class="h3">Swimming Class</a>
+                                            <p>Children will enjoy swimming sessions once a week.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="classes-preview-card">
+                                        <a href="#" class="classes-logo"><img src="/img/new/gWork.jpg" alt="classes"></a>
+
+                                        <div class="classes-text py-4" style="padding-top:25px">
+                                            <a href="#" class="h3">Gardening</a>
+                                            <p>Gardening at the school farm will help the kids appreciate nature and develop strong character traits such as patience and help create a sense of responsibility.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="classes-preview-card">
+                                        <a href="#" class="classes-logo"><img src="/img/music.jpg" alt="classes"></a>
+
+                                        <div class="classes-text" style="padding-top:25px">
+                                            <a href="#" class="h3">Music Class</a>
+                                            <p>Through a series of well planned lessons, the child will be taught to play musical instruments in such a way as to glorify God. <br><code>❝But thou art holy, O thou that inhabitest the praises of Israel <small><i>Psalm 22:3</i></small>❞</code></p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="/img/buterfly.png" class="moving-element" alt="buterfly" data-move='plus' data-move-speed='20'>
+            <img src="/img/bush.png" class="bottom-img" alt="bush">
+        </section>
+        <!-- End home classes -->
+
+        <!-- Begin home enroll -->
+        <section class="home-enroll color-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Enroll Your Child To A Class</h2>
+                        <h5 style="color: white;">Join us today to set your child on a path <br>of growth in Christian principles that will help them develop characters pleasing to God and man</h5>
+
+                        <a href="/contact-us" class="button color-3">Email us today</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End home enroll -->
+        <!-- Begin photo gallery -->
+        <section class="home-gallery color-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Photo Gallery</h2>
+                    </div>
+                    <div class="col-md-12 col-lg-12">
+                       <!-- @if($files)
+                            <div class="row" id="MyGallery">
+                                 @foreach ($files as $file)
+                                    <div class="singleGallery col-sm-6 col-md-4 col-lg-3 my-1 pl-0 px-1 ">
+                                        <div class="view overlay zoom bg-dark">
+                                          <img src="/storage/gallery/'.$file) }}" class="img-fluid hoverable" alt="Loading...">
+                                          <div class="mask flex-center waves-effect waves-dark parent-gallery">
+                                            <a class="" href="/storage/gallery/'.$file) }}"><label class="text-light img-focus"><i class="mdi mdi-arrow-expand font-20"></i></label></a>
+                                          </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        @endif -->
+                    </div>
+                    <div class="col-md-12 col-lg-12">
+                        <a href="/gallery" class="button color-4">View More</a>
+                    </div>
+                </div>
+            </div>
+            <img src="/img/caterpillar.png" class="bottom-img parallax-img" alt="caterpillar">
+        </section>
+        <!-- End photo gallery -->
+
+
+    </main>
+    <!-- End home content -->
+
+</MasterLayout>

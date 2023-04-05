@@ -1,0 +1,178 @@
+---
+import HeaderInfo from '../components/HeaderInfo.astro'
+import HeaderMenu from '../components/HeaderMenu.astro'
+import Loader from '../components/Loader.vue'
+import Notifier from "../components/Notifier.vue";
+import ClientJs from "../components/ClientJs.astro"
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/ico" href="/favicon.ico" />
+		<title>Lofty Creek Christian school</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--====>> Bootstrap V3 CSS <<====-->
+        <link rel="stylesheet" type="text/css" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+        <!--====>> Google fonts CSS <<====-->
+        <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700" rel="stylesheet">
+
+        <!--====>> Material design icons CSS <<====-->
+        <link href="https://cdn.materialdesignicons.com/2.7.94/css/materialdesignicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/font/fontawesome/css/all.min.css">
+
+        <!--====>> Slick Slider CSS <<====-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" type="text/css" rel="stylesheet" />
+
+        <!-- Custom select -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
+        <!-- Data picker -->
+        <link href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" type="text/css" rel="stylesheet" />
+
+        <!--====>> Feather light CSS <<====-->
+        <link href="//cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+        <!--====>> Index CSS <<====-->
+        <link href="/css/index.css" type="text/css" rel="stylesheet" />
+        <link href="/js/izitoast/dist/css/iziToast.min.css" type="text/css" rel="stylesheet" />
+        <link href="/css/custom.css" type="text/css" rel="stylesheet" />
+        <link rel="stylesheet" href="/gallery/css/bundle.min.css">
+        <style is:global>
+            code{
+                color: #25c749;
+                background-color: transparent;
+            }
+        </style>
+        <slot name="css" />
+	</head>
+	<body class="home">
+        <!-- Begin preloader -->
+          <Loader client:only="vue" />
+        <!-- End preloader -->
+        <!-- Begin header -->
+        <header>
+          <!-- Begin header main info -->
+            <HeaderInfo />
+          <!-- Begin header main info -->
+
+            <!-- Begin header menu -->
+            <HeaderMenu />
+            <!-- End header menu -->
+        </header>
+        <!-- End header -->
+        <!-- Begin home slider -->
+        <!-- <slot name="banner"></slot> -->
+        <Notifier client:visible />
+        <!-- End home slider -->
+        <!-- Begin home content -->
+        <div id="app">
+            <slot></slot>
+        </div>
+        <!-- End home content -->
+ <!-- Begin footer -->
+        <footer style="margin-top: 0vh">
+            <!-- Begin footer top content -->
+            <div class="footer-top-content">
+                <div class="container">
+                    <div class="row row-flex">
+                        <!-- Begin footer tools -->
+                        <div class="col-xs-12 col-sm-6 col-md-5 col-lg-3">
+                            <div class="footer-tools">
+                                <a href="/" class="footer-logo"><img width="250px" src="img/logos/logo white.svg" alt="logo"></a>
+                                <p>Our mission is to transform this generation through sound education with a distinct christian worldview.</p>
+                                <form action="/subscribe" method="POST" class="footer-subscribe">
+
+                                    <input type="email" name="email" placeholder="Subscribe for updates...">
+                                    <button type="submit">
+                                        <i class="mdi mdi-telegram"></i>
+                                    </button>
+                                </form>
+                                <ul class="soc-list">
+                                    <li>
+                                        <a href="https://www.facebook.com/loftycreekchristianschool/" title="Facebook" target="_blank">
+                                            <i class="mdi mdi-facebook"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- End footer tools -->
+
+                       <!-- Begin footer contact -->
+                        <div class="col-xs-12 col-sm-12 col-sm-offset-0 col-md-12 col-md-offset-0 col-lg-3 col-lg-offset-1">
+                            <div class="footer-contact">
+                                <h3>Contact us</h3>
+                                <p>Find our trusted support team today!</p>
+                                <ul>
+                                    <li>
+                                        <i class="mdi mdi-clock-outline"></i>
+                                        <div class="footer-contact-text">
+                                            <p>Mon - Fri</p>
+                                            <p>8 am - 5 pm</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="mdi mdi-map-marker"></i>
+                                        <div class="footer-contact-text">
+                                            <a href="https://goo.gl/maps/1kZ22ASKEyNYECRW9" target="_blank"> Along Wambaa road, 0.5km off the Nairobi- Nakuru Highway at Muthiga’s Munyua road</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="mdi mdi-phone"></i>
+                                        <div class="footer-contact-text">
+                                            <a href="tel:+254729118877">+2547-2911-8877</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="mdi mdi-email-open-outline"></i>
+                                        <div class="footer-contact-text">
+                                           <a href="#!">info@loftycreekchristianschool.org</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- End footer contact -->
+
+                       <!-- Begin footer map -->
+                        <div class="col-xs-12 col-sm-6 col-sm-offset-0 col-md-6 col-md-offset-1 col-lg-4 col-lg-offset-1">
+                            <!-- Begin footer map -->
+                            <div class="footer-map">
+                                <div id="footer-map"></div>
+                            </div>
+                            <!-- End footer map -->
+                        </div>
+                        <!-- End footer map -->
+                    </div>
+                </div>
+            </div>
+            <!-- End footer top content -->
+
+            <!-- Begin footer bottom content -->
+            <div class="footer-bottom-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>With <i class="fas fa-leaf-heart"></i> by <a href="#" target="_blank">Lofty Creek</a> © All rights reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End footer bottom content -->
+        </footer>
+        <!-- End footer -->
+        <div class="fade-bg"></div>
+        <p class="back-top color-loftymaroon" id="toTop"><i class="mdi mdi-chevron-up"></i></p>
+
+
+        <slot name="js" />
+    </body>
+</html>

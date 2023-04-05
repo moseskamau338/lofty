@@ -1,0 +1,106 @@
+---
+import MasterLayout from '../layouts/MasterLayout.astro'
+import HeroSub from '../components/HeroSub.astro'
+
+interface Link {name:string, link:string}
+interface Crumb {main:string, path: Link[] }
+
+const breadcrumbs: Crumb = {
+    main: "Contact Us",
+    path: [
+        {link: "/", name: "Home"},
+        {link: "/contact-us", name: "Contact Us"},
+    ]
+}
+---
+<Fragment slot="css" >
+	<style>
+		h2{
+			color: #03132a !important;
+		}
+	</style>
+</Fragment>
+<MasterLayout>
+    <HeroSub breadcrumbs={breadcrumbs} />
+	  <main class="contact-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="contact-info">
+							<h2>Contact Info</h2>
+							<p>Feel free to contact us or drop us a message and we shall get back to you at our earliest convenience.</p>
+							<!-- Begin contact list -->
+							<ul class="contact-list">
+								<li style="width: 100%;padding-top: 20px;">
+									<i class="mdi mdi-phone color-1"></i>
+									<div class="footer-contact-text">
+										<a href="#!">+2547-291-188-77</a>
+									</div>
+								</li>
+								<li style="width: 100%;padding-top: 20px;">
+									<i class="mdi mdi-email-open color-2"></i>
+									<div class="footer-contact-text">
+										<a href="#!">P.O BOX  1882-00502, <br> Nairobi.</a>
+									</div>
+								</li>
+								<li style="width: 100%;padding-top: 20px;">
+									<i class="mdi mdi-web" style="color: #19B5FE"></i>
+									<div class="footer-contact-text">
+										<a href="#!">loftycreekchristianschool.org</a>
+									</div>
+								</li>
+								<li style="width: 100%;padding-top: 20px;">
+									<i class="mdi mdi-mail-ru color-3"></i>
+									<div class="footer-contact-text">
+										<a href="#!">info@loftycreekchristianschool.org</a>
+									</div>
+								</li>
+							</ul>
+							<!-- End contact list -->
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="apply-form-wrap">
+							<h2>Send Us a  Message</h2>
+							<!--@if (count($errors))
+								<p class="alert alert-danger">
+									<h6>Please handle the following issues</h6>
+									<ul>
+										@foreach ($errors->all() as $error)
+										    <li>
+										    	{{ $error }}
+										    </li>
+										@endforeach
+									</ul>
+								</p>
+							@endif-->
+							<form action="/send/message" method="POST" class="apply-form color-1">
+								<div class="inner-apply-form">
+									<div class="input-wrap">
+										<label for="apply-name">Your Name</label>
+										<input type="text" name="name" id="apply-name">
+									</div>
+									<div class="input-wrap">
+										<label for="apply-email">Your E-mail</label>
+										<input type="email" name="email" id="apply-email">
+									</div>
+									<div class="input-wrap">
+										<label for="apply-subject">Subject</label>
+										<input type="text" name="subject" id="apply-subject">
+									</div>
+								</div>
+								<label for="apply-message">Enter Your Message</label>
+								<textarea name="body" id="apply-message"></textarea>
+								<button type="submit" class="color-4">Send</button>
+							</form>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="contact-map">
+							<div id="map"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+</MasterLayout>

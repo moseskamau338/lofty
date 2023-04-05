@@ -1,0 +1,22 @@
+---
+const page :Request = Astro.request
+const {breadcrumbs} = Astro.props
+---
+<!-- Begin page name -->
+        <section style="margin-bottom: 35px" class="page-name color-loftymaroon">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page-name-content">
+                            <h1 class="text-white">{breadcrumbs.main}</h1>
+                            <ul class="bread-crumbs">
+                                {breadcrumbs.path.map((path) => (
+                                <li><a class="text-white" href={path.link}> {path.name} </a></li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- End page name -->
