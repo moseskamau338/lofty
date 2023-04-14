@@ -4,6 +4,7 @@ import HeaderMenu from '../components/HeaderMenu.astro'
 import Loader from '../components/Loader.vue'
 import Notifier from "../components/Notifier.vue";
 import ClientJs from "../components/ClientJs.astro"
+
 ---
 
 <html lang="en">
@@ -12,49 +13,20 @@ import ClientJs from "../components/ClientJs.astro"
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="icon" type="image/ico" href="/favicon.ico" />
-		<title>Lofty Creek Christian school</title>
+		<title> Lofty Creek | LCCS </title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&family=Roboto:ital,wght@0,100;0,400;0,900;1,400;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/all.min.css">
+        <link rel="stylesheet" href="/css/custom.css">
 
-        <!--====>> Bootstrap V3 CSS <<====-->
-        <link rel="stylesheet" type="text/css" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css">
-
-
-        <!--====>> Google fonts CSS <<====-->
-        <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700" rel="stylesheet">
-
-        <!--====>> Icons <<====-->
-        <link rel="stylesheet" type="text/css" href="/font/fontawesome/css/all.min.css">
-
-        <!--====>> Slick Slider CSS <<====-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" type="text/css" rel="stylesheet" />
-
-        <!-- Custom select -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-
-        <!-- Data picker -->
-        <link href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" type="text/css" rel="stylesheet" />
-
-        <!--====>> Feather light CSS <<====-->
-        <link href="//cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.css" type="text/css" rel="stylesheet" />
-
-        <!--====>> Index CSS <<====-->
-        <link href="/css/index.css" type="text/css" rel="stylesheet" />
-        <link href="/js/izitoast/dist/css/iziToast.min.css" type="text/css" rel="stylesheet" />
-        <link href="/css/custom.css" type="text/css" rel="stylesheet" />
-        <link rel="stylesheet" href="/gallery/css/bundle.min.css">
-        <style is:global>
-            code{
-                color: #25c749;
-                background-color: transparent;
-            }
-        </style>
         <slot name="css" />
 	</head>
-	<body class="home">
+	<body class="font-roboto text-slate-500">
         <!-- Begin preloader -->
-          <Loader client:only="vue" />
+          <!-- <Loader client:only="vue" /> -->
         <!-- End preloader -->
         <!-- Begin header -->
         <header>
@@ -77,101 +49,109 @@ import ClientJs from "../components/ClientJs.astro"
         </div>
         <!-- End home content -->
  <!-- Begin footer -->
-        <footer style="margin-top: 0vh">
-            <!-- Begin footer top content -->
-            <div class="footer-top-content">
-                <div class="container">
-                    <div class="row row-flex">
-                        <!-- Begin footer tools -->
-                        <div class="col-xs-12 col-sm-6 col-md-5 col-lg-3">
-                            <div class="footer-tools">
-                                <a href="/" class="footer-logo"><img width="250px" src="img/logos/logo white.svg" alt="logo"></a>
-                                <p>Our mission is to transform this generation through sound education with a distinct christian worldview.</p>
-                                <form action="/subscribe" method="POST" class="footer-subscribe">
 
-                                    <input type="email" name="email" placeholder="Subscribe for updates...">
-                                    <button type="submit">
-                                        <i class="mdi mdi-telegram"></i>
-                                    </button>
-                                </form>
-                                <ul class="soc-list">
-                                    <li>
-                                        <a href="https://www.facebook.com/loftycreekchristianschool/" title="Facebook" target="_blank">
-                                            <i class="mdi mdi-facebook"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- End footer tools -->
+    <footer class="bg-brown text-white">
+        <section class="px-5 lg:px-32 py-20 grid grid-cols-1 lg:grid-cols-12 gap-10">
+            <div class="col-span-4">
+                <img src="/img/logos/logo-for-dark.svg" alt="Lofty Creek Christian School logo" class="w-[70%]">
 
-                       <!-- Begin footer contact -->
-                        <div class="col-xs-12 col-sm-12 col-sm-offset-0 col-md-12 col-md-offset-0 col-lg-3 col-lg-offset-1">
-                            <div class="footer-contact">
-                                <h3>Contact us</h3>
-                                <p>Find our trusted support team today!</p>
-                                <ul>
-                                    <li>
-                                        <i class="mdi mdi-clock-outline"></i>
-                                        <div class="footer-contact-text">
-                                            <p>Mon - Fri</p>
-                                            <p>8 am - 5 pm</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <i class="mdi mdi-map-marker"></i>
-                                        <div class="footer-contact-text">
-                                            <a href="https://goo.gl/maps/1kZ22ASKEyNYECRW9" target="_blank"> Along Wambaa road, 0.5km off the Nairobi- Nakuru Highway at Muthiga’s Munyua road</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <i class="mdi mdi-phone"></i>
-                                        <div class="footer-contact-text">
-                                            <a href="tel:+254729118877">+2547-2911-8877</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <i class="mdi mdi-email-open-outline"></i>
-                                        <div class="footer-contact-text">
-                                           <a href="#!">info@loftycreekchristianschool.org</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- End footer contact -->
+                <p class="mt-5">
+                    Our mission is to transform this generation through sound education with a distinct christian worldview.
+                </p>
 
-                       <!-- Begin footer map -->
-                        <div class="col-xs-12 col-sm-6 col-sm-offset-0 col-md-6 col-md-offset-1 col-lg-4 col-lg-offset-1">
-                            <!-- Begin footer map -->
-                            <div class="footer-map">
-                                <div id="footer-map"></div>
-                            </div>
-                            <!-- End footer map -->
+                <!-- component -->
+
+                <form class="mt-5">
+                    <label for="default-search" class="mb-2 text-sm font-medium text-white sr-only">Submit email</label>
+                    <div class="relative">
+                        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                            <i class="fas fa-paper-plane"></i>
                         </div>
-                        <!-- End footer map -->
+                        <input type="search" id="default-search" class="block p-4 pl-10 w-full text-sm bg-white/30 rounded-lg border border-white focus:ring-2 focus:ring-white/40 focus:border-white/50 focus:ring-offset-2 placeholder:text-white" placeholder="Search Mockups, Logos..." required>
+                        <button type="submit" class="text-brown absolute right-2.5 bottom-2.5 bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300/30 font-medium rounded-lg text-sm px-4 py-2">Send</button>
                     </div>
-                </div>
-            </div>
-            <!-- End footer top content -->
+                </form>
 
-            <!-- Begin footer bottom content -->
-            <div class="footer-bottom-content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>With <i class="fas fa-leaf-heart"></i> by <a href="#" target="_blank">Lofty Creek</a> © All rights reserved</p>
-                        </div>
+                <div id="social" class="mt-4">
+                    <button class="hover:scale-105 transition-all">
+                        <i class="fab fa-facebook text-3xl"></i>
+                    </button>
+                </div>
+
+            </div>
+            <div class="col-span-4">
+                <h3 class="font-baloo text-3xl font-medium">Contact Us</h3>
+                <small>Find our trusted support team today!</small>
+
+                <div class="flex flex-col space-y-8 mt-5">
+                    <div class="flex items-center space-x-4">
+                        <i class="far fa-clock text-2xl"></i>
+                        <span>
+                            Mon - Fri <br>
+                            8 am - 5 pm
+                        </span>
                     </div>
+
+                    <div class="flex space-x-4 hover:text-green-400 transition-all">
+                        <i class="far fa-location text-2xl"></i>
+                        <a href="https://goo.gl/maps/1kZ22ASKEyNYECRW9" target="_blank">
+                            Along Wambaa road, <br>
+                            0.5km off the Nairobi- Nakuru Highway <br>
+                            at Muthiga’s Munyua road
+                        </a>
+                    </div>
+
+                    <div class="flex space-x-4 hover:text-green-400 transition-all">
+                        <i class="far fa-phone text-2xl"></i>
+                        <a href="tel:+254729118877" target="_blank">
+                            +2547-2911-8877
+                        </a>
+                    </div>
+                    <div class="flex space-x-4 hover:text-green-400 transition-all">
+                        <i class="far fa-mailbox text-2xl"></i>
+                        <a href="mailto:info@loftycreekchristianschool.org" target="_blank">
+                            info@loftycreekchristianschool.org
+                        </a>
+                    </div>
+
+
                 </div>
+
             </div>
-            <!-- End footer bottom content -->
-        </footer>
-        <!-- End footer -->
-        <div class="fade-bg"></div>
-        <p class="back-top color-loftymaroon" id="toTop"><i class="mdi mdi-chevron-up"></i></p>
+        </section>
+        <div class="border-t border-white text-white py-8 text-center">
+            With 🤍 by Lofty Creek &nbsp; &nbsp; © All rights reserved
+        </div>
+    </footer>
 
 
-        <slot name="js" />
+    <script lang="ts">
+        window.addEventListener('scroll', function() {
+          document.querySelectorAll('.animate-on-scroll').forEach(function(element) {
+            if (isElementPartiallyInViewport(element)) {
+              if (!element.classList.contains('animate-enter')) {
+                element.style.animationDuration = element.getAttribute('data-duration');
+                element.classList.add('animate-enter');
+              }
+            } else {
+              if (element.classList.contains('animate-enter')) {
+                element.style.animationDuration = null;
+                element.classList.remove('animate-enter');
+              }
+            }
+          });
+        });
+
+        function isElementPartiallyInViewport(el) {
+          let rect = el.getBoundingClientRect();
+          let windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+          let windowWidth = (window.innerWidth || document.documentElement.clientWidth);
+
+          let vertInView = (rect.top <= windowHeight) && ((rect.top + rect.height) >= 0);
+          let horInView = (rect.left <= windowWidth) && ((rect.left + rect.width) >= 0);
+
+          return (vertInView && horInView);
+        }
+    </script>
     </body>
 </html>

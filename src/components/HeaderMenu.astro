@@ -1,28 +1,21 @@
 ---
 
 ---
-<nav class="header-nav">
-    <div class="close-menu"><i class="fa fa-close"></i></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <ul class="header-nav-list">
-                    <li class="color-1"><a href="/" class="active">Home</a></li>
-                    <li class="color-5"><a href="/about-us">About us</a></li>
-                    <li class="color-3 drop-right"><a href="contact-us">Contacts</a></li>
-                    <li class="color-3"><a href="/gallery">Gallery</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+<nav class="hidden md:flex px-32 justify-between border-t">
+    <a href="/" class="group text-2xl font-baloo font-bold flex flex-col text-center items-center before:bg-purple before:h-1.5 before:w-[120%] hover:before:w-[130%] before:duration-300 before:transition-all before:text-center before:rounded-full">
+        <span class="py-2 group-hover:text-purple transition-all">Home</span>
+    </a>
+
+    <a href="/about-us" class="group text-2xl font-baloo font-bold flex flex-col text-center items-center before:bg-success before:h-1.5 before:w-[120%] hover:before:w-[130%] before:duration-300 before:transition-all before:text-center before:rounded-full">
+        <span class="py-2 group-hover:text-success transition-all">About Us</span>
+    </a>
+
+    <a href="/contact-us" class="group text-2xl font-baloo font-bold flex flex-col text-center items-center before:bg-orange before:h-1.5 before:w-[120%] hover:before:w-[130%] before:duration-300 before:transition-all before:text-center before:rounded-full">
+        <span class="py-2 group-hover:text-orange transition-all">Contact Us</span>
+    </a>
+
+    <a href="/gallery" class="group text-2xl font-baloo font-bold flex flex-col text-center items-center before:bg-light-red before:h-1.5 before:w-[120%] hover:before:w-[130%] before:duration-300 before:transition-all before:text-center before:rounded-full">
+        <span class="py-2 group-hover:text-light-red transition-all">Gallery</span>
+    </a>
+
 </nav>
-<!-- End header menu -->
- <!-- Begin search overlay -->
-<div class="search-overlay-wrap color-1">
-    <div class="close-search-overlay"><i class="fa fa-xmark"></i></div>
-    <form action="#" class="search-overlay">
-        <input type="search" name="overlay-search" placeholder="Search...">
-        <button type="submit"><i class="mdi mdi-magnify"></i></button>
-    </form>
-</div>
-<!-- End search overlay -->

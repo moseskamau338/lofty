@@ -1,6 +1,6 @@
 ---
 import MasterLayout from '../layouts/MasterLayout.astro'
-import HeroSub from '../components/HeroSub.astro'
+import Gallery from "../components/Gallery.vue";
 
 interface Link {name:string, link:string}
 interface Crumb {main:string, path: Link[] }
@@ -12,28 +12,21 @@ const breadcrumbs: Crumb = {
         {link: "/contact-us", name: "Gallery"},
     ]
 }
+
+
+const response = await fetch(import.meta.env.PUBLIC_CMS_URL+'/items/general_gallery?fields=id,images.directus_files_id');
+const genImages = await response.json();
+
+const response2 = await fetch(import.meta.env.PUBLIC_CMS_URL+'/items/school_photos?fields=id,images.directus_files_id');
+const schoolImages = await response2.json();
+
+
 ---
-<Fragment slot="css" >
-	<link rel="stylesheet" href="/gallery/css/bundle.min.css">
-</Fragment>
 <MasterLayout>
-    <HeroSub breadcrumbs={breadcrumbs} />
-	  <main class="gallery-content">
-			<div class="container">
-				<!--@if($files)
-				<div class="row" id="MyGallery">
-					 @foreach ($files as $file)
-						<div class="singleGallery col-sm-6 col-md-4 col-lg-3 my-1 px-1 ">
-							<div class="view overlay zoom" style="background: #000!important">
-						      <img src="{{ asset('storage/gallery/'.$file) }}" class="img-fluid hoverable" alt="Loading...">
-						      <div class="mask flex-center waves-effect waves-dark parent-gallery">
-						        <a class="" href="{{ asset('storage/gallery/'.$file) }}"><label class="text-light img-focus"><i class="mdi mdi-arrow-expand font-20"></i></label></a>
-						      </div>
-						    </div>
-						</div>
-				    @endforeach
-				</div>
-				@endif -->
-			</div>
-		</main>
+    <main>
+		<Gallery
+			genImages={genImages}
+			schoolImages={schoolImages}
+			client:only="vue" />
+	</main>
 </MasterLayout>

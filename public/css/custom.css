@@ -1,18 +1,47 @@
-.color-loftynavy{
-    background: #03132a !important;
-}
-.color-loftybeige{
-    background: #ab8240 !important;
-}
-.color-beige{
-    color: #ab8240 !important;
-}
-.color-loftymaroon{
-    background: #65011b !important;
-}
-header .header-top-info {
-    background: #03132a !important;
-}
-.text-white{
-	color: #fff !important;
-}
+/* Set the initial state of the element */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    /* Define the animation for when the element enters the viewport */
+    .animate-on-scroll.animate-enter {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Define the animation for when the element leaves the viewport */
+    .animate-on-scroll.animate-leave {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+
+    /* Use the `animation` property to trigger the animations on scroll */
+    .animate-on-scroll.animate-enter, .animate-on-scroll.animate-leave {
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+    }
+
+    /* Define the keyframes for the animations */
+    @keyframes enter {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes leave {
+      from {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      to {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+    }

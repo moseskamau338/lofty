@@ -14,190 +14,173 @@ const breadcrumbs: Crumb = {
 }
 ---
 <MasterLayout>
-    <HeroSub breadcrumbs={breadcrumbs} />
-    <main class="main-about">
-	<!-- Begin our story section -->
-	<section class="our-story-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="our-story">
-						<img width="486px" src="/img/about-img.jpg" alt="about">
-						<div class="our-story-text">
-							<h2>Our Story</h2>
-							<p>Lofty Creek Christian School is an integrated Edu-care center for children from all walks of life aged between 2 and 5 years. We are located along Wambaa road, 0.5km off the Nairobi- Nakuru Highway at Muthiga’s Munyua road. Designed with kids in mind, LCCS observes very high standards of learning with a holistic child development approach. Given the varied capabilities of our children, we have integrated Competency-Based and Montessori Curricula, all with a Christian worldview.</p>
-							<div class="story-benefit-wrap">
-								<div class="story-benefit">
-									<img src="/img/shield.png" alt="shield">
-									<h5>Child Safety</h5>
-								</div>
-								<div class="story-benefit">
-									<img src="/img/football.png" alt="football">
-									<h5>Fitness Activities</h5>
-								</div>
-								<div class="story-benefit">
-									<img src="/img/school-bus-front.png" alt="school-bus">
-									<h5>Bus Service</h5>
-								</div>
-								<div class="story-benefit">
-									<img src="/img/art.png" alt="art">
-									<h5>Art Class</h5>
-								</div>
-							</div>
-						</div>
+   <main>
+		<!--hero-->
+		<section class="bg-brown flex flex-col items-center justify-center text-white py-20">
+			<h1 class="text-4xl font-bold font-baloo">About us</h1>
+			<h4 class="text-lg tracking-widest">Home / About Us</h4>
+		</section>
+
+		<section class="grid grid-cols-1 lg:grid-cols-12 gap-5 px-5 lg:px-32 py-20">
+		  <div class="col-span-5">
+			  <img src="/img/about-img.jpg" alt="about us Lofty creek">
+		  </div>
+			<div class="col-span-7">
+				<h2 class="text-black text-3xl font-baloo font-bold">Our Story</h2>
+				<p class="mt-5 prose-base">
+					Lofty Creek Christian School is an integrated Edu-care center for children from all walks of life aged between <b>2 and 5 years</b>. We are <b>located along Wambaa road, 0.5km off the Nairobi- Nakuru Highway at Muthiga’s Munyua road</b>. Designed with kids in mind, LCCS observes <b>very high standards</b> of learning with a holistic child development approach. Given the varied capabilities of our children, we have integrated <i><b>Competency-Based and Montessori Curricula</b></i>, all with a <b>Christian worldview</b>.
+				</p>
+
+				<div class="flex flex-wrap mt-12">
+					<div class="flex flex-col mr-10 animate-on-scroll duration-300">
+						<img class="h-12 w-10 mb-4" src="/img/shield.png" alt="Child Safety">
+						<h5 class="text-black font-baloo whitespace-nowrap font-bold">Child Safety</h5>
+					</div>
+					<div class="flex flex-col mr-10 animate-on-scroll duration-750">
+						<img class="h-12 w-12 mb-4" src="/img/football.png" alt="Fitness Activities">
+						<h5 class="text-black font-baloo whitespace-nowrap font-bold">Fitness Activities</h5>
+					</div>
+					<div class="flex flex-col mr-10 animate-on-scroll duration-500">
+						<img class="h-12 w-12 mb-4" src="/img/school-bus-front.png" alt="Bus Service">
+						<h5 class="text-black font-baloo whitespace-nowrap font-bold">Bus Service</h5>
+					</div>
+					<div class="flex flex-col mr-10 animate-on-scroll duration-1000">
+						<img class="h-12 w-12 mb-4" src="/img/art.png" alt="Art Class">
+						<h5 class="text-black font-baloo whitespace-nowrap font-bold">Art Class</h5>
 					</div>
 				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End our story section -->
 
-	<!-- Begin apply section -->
-	<section class="apply-section color-2" data-parent-move='true'>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6">
-					<div class="how-apply">
-						<h2>How to Apply?</h2>
-						<p>You can choose one of the following processes to apply:</p>
-						<ul>
-							<li>
-								<p>Head over to our offices located along Wambaa road, 0.5km off the Nairobi- Nakuru Highway at Muthiga’s Munyua road</p>
-							</li>
-							<li>
-								<p> Drop us an email with the child's age and the program you wish to enroll your child in, plus a personal contact through which we can get back. Do so through <a style="text-decoration: none;color: #1d41bd;" href="#!">info@loftycreekchristianschool.org</a></p>
-							</li>
-						</ul>
+			</div>
+		</section>
+
+		<section class="grid grid-cols-1 lg:grid-cols-12 gap-16 bg-success text-white py-20 px-5 lg:px-32 mt-20 relative">
+			<div class="col-span-6">
+				<h3 class="font-baloo font-bold text-4xl">How to apply?</h3>
+				<p class="mt-2">
+					You can choose one of the following processes to apply:
+				</p>
+				<div class="flex space-x-4 mt-5">
+					<i class="fas fa-location text-2xl"></i>
+					<p>Head over to our offices located along Wambaa road, 0.5km off the Nairobi- Nakuru Highway at Muthiga’s Munyua road</p>
+				</div>
+
+				<div class="flex space-x-4 mt-5">
+					<i class="fas fa-mailbox text-2xl"></i>
+					<p>Drop us an email with the child's age and the program you wish to enroll your child in, plus a personal contact through which we can get back. Do so through
+						<a href="#" class="underline">info@loftycreekchristianschool.org</a>
+					</p>
+				</div>
+
+			</div>
+
+			<div class="col-span-6">
+				<h3 class="font-baloo font-bold text-4xl">Send us a message</h3>
+
+				<img src="/img/bee.png" class="absolute top-0 right-20 animate-bounce duration-30" alt="">
+
+				<form class="grid grid-cols-1 lg:grid-cols-12 gap-2 mt-5">
+					<div class="col-span-6">
+						<label for="name" class="block mb-2 text-sm font-medium">Name</label>
+						<input type="text" id="name" class="prose prose-base text-white block py-2 px-3 w-full text-sm bg-white/10 rounded-lg border border-gray-300 focus:ring-white focus:border-white placeholder:text-white">
 					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="apply-form-wrap">
-						<h2>Send Us a  Message</h2>
-						<!--@if (count($errors))
-								<p class="alert alert-danger">
-									<h6>Please handle the following issues</h6>
-									<ul>
-										@foreach ($errors->all() as $error)
-										    <li>
-										    	{{ $error }}
-										    </li>
-										@endforeach
-									</ul>
-								</p>
-							@endif -->
-						<form action="{{ url('/send/message" method="POST" class="apply-form color-1">
-							<div class="inner-apply-form">
-								<div class="input-wrap">
-									<label for="name">Your Name</label>
-									<input type="text" name="name" id="name">
-								</div>
-								<div class="input-wrap">
-									<label for="email">Your E-mail</label>
-									<input type="email" name="email" id="email">
-								</div>
-								<div class="input-wrap">
-									<label for="subject">Subject</label>
-									<input type="text" name="subject" id="subject">
-								</div>
-							</div>
-							<label for="body">Enter Your message</label>
-							<textarea id="body" name="body"></textarea>
-							<button type="submit" class="color-4">Send</button>
-						</form>
+					<div class="col-span-6">
+						<label for="email" class="block mb-2 text-sm font-medium">Email</label>
+						<input type="text" id="email" class="prose prose-base text-white block py-2 px-3 w-full text-sm bg-white/10 rounded-lg border border-gray-300 focus:ring-white focus:border-white placeholder:text-white">
 					</div>
-				</div>
-			</div>
-		</div>
-		<img src="/img/bee.png" class="moving-element" alt="bee" data-move='plus' data-move-speed='50'>
-	</section>
-	<!-- End apply section -->
-
-
-	<!-- Begin about benefit -->
-	<section class="benefit-block color-3">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="benefit-title">
-						<h2>The Outdoors</h2>
-						<p>The extracurricular activities provided at Lofty Creek Christian School are calculated to positively influence a child's social life as they interact with others. these activities in turn improve a child's academic performance by sharpening mental task skills.</p>
+					<div class="col-span-6">
+						<label for="subject" class="block mb-2 text-sm font-medium">Subject</label>
+						<input type="text" id="subject" class="prose prose-base text-white block py-2 px-3 w-full text-sm bg-white/10 rounded-lg border border-gray-300 focus:ring-white focus:border-white placeholder:text-white">
 					</div>
-					<ul class="benefits-list-big">
+					<div class="col-span-12">
+						<label for="message" class="block mb-2 text-sm font-medium">Your message</label>
+						<textarea id="message" rows="4" class="prose prose-base text-white block p-2.5 w-full text-sm bg-white/10 rounded-lg border border-gray-200 focus:ring-white focus:border-white placeholder:text-white" placeholder="Your message..."></textarea>
 
-						<li>
-							<div class="benefit-card">
-								<img src="/img/exam.png" alt="exam">
-								<h4>Various <br>  Classes</h4>
-							</div>
-						</li>
-
-						<li>
-							<div class="benefit-card">
-								<img src="/img/university.png" alt="university">
-								<h4>Happy <br> Environment</h4>
-							</div>
-						</li>
-						<li>
-							<div class="benefit-card">
-								<img src="/img/leaf.svg" alt="dancer">
-								<h4>Gardening <br> class</h4>
-							</div>
-						</li>
-						<li>
-							<div class="benefit-card">
-								<img src="/img/music-player.png" alt="music-player">
-								<h4>Music <br> Programs</h4>
-							</div>
-						</li>
-						<li>
-							<div class="benefit-card">
-								<img src="/img/books.png" alt="books">
-								<h4>Foreign <br> Languages</h4>
-							</div>
-						</li>
-						<li>
-							<div class="benefit-card">
-								<img src="/img/basketball.png" alt="basketball">
-								<h4>Fitness <br> Programs </h4>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End about benefit -->
-
-	<!-- Begin testimonial slider second -->
-	<section class="">
-		<div class="container">
-			<div class="row" style="margin-top: 30px !important;text-align: center;">
-				<h2>Our achievement focus &hellip;</h2>
-			</div>
-			<div class="row" style="margin-top: 30px !important">
-				<div class="col-md-6 col-sm-6 col-xl-6" style="text-align: right;">
-					<img width="357px" src="/img/mission.jpg">
-				</div>
-				<div class="col-md-6 col-sm-6 col-xl-6 py-20">
-					<div class="row">
-						<h3>Our Mission</h3>
 					</div>
-					Our mission is to transform this generation through sound education with a distinctly Christian worldview.
-				</div>
-			</div>
-			<div class="row" style="margin-top: 30px !important">
-				<div class="col-md-6 col-sm-6 col-xl-6" style="float: right;text-align: left;">
-					<img width="200px" src="/img/vision.svg">
-				</div>
-				<div class="col-md-6 col-sm-6 col-xl-6 py-20">
-					<div class="row">
-						<h3>Our Vision</h3>
+
+					<div class="col-span-12">
+						<button type="button" class="relative mt-5 text-white bg-orange font-bold font-baloo focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-md px-5 py-2 text-center inline-flex items-center
+						 after:w-[22%] after:h-full after:absolute
+						 after:bg-slate-800/20 after:right-0 after:rounded-r-md
+						 hover:after:w-[100%] hover:after:rounded-l-md
+						 after:transition-all after:duration-700
+						 ">
+							<span class="z-10">Send Message</span>
+							<svg aria-hidden="true" class="w-5 h-5 ml-3 z-10 -mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+						</button>
 					</div>
-					To provide Bible-centered christian education preparing young people for service to God and Mankind.
+				</form>
+			</div>
+		</section>
+
+		<section class="flex flex-col items-center justify-center bg-orange text-white py-20 px-5 lg:px-32 relative">
+			<h2 class="text-white text-4xl font-baloo font-bold">The Outdoors</h2>
+				<div class="lg:w-[50%] mt-4 text-center">
+					<p>
+						The extracurricular activities provided at Lofty Creek Christian School are calculated to positively influence a child's social life as they interact with others. these activities in turn improve a child's academic performance by sharpening mental task skills.
+					</p>
+				</div>
+			<div class="flex flex-wrap mt-10">
+				<div class="flex flex-col items-center mr-10 mb-2">
+					<img src="/img/exam.png" class="h-12" alt="Various classes">
+					<h6 class="text-xl font-bold font-baloo whitespace-nowrap mt-4">Various classes</h6>
+				</div>
+				<div class="flex flex-col items-center mr-10 mb-2">
+					<img src="/img/university.png" class="h-12" alt="Environment">
+					<h6 class="text-xl font-bold font-baloo whitespace-nowrap mt-4">Environment</h6>
+				</div>
+
+				<div class="flex flex-col items-center mr-10 mb-2">
+					<img src="/img/leaf.svg" class="h-12" alt="Gardening Class">
+					<h6 class="text-xl font-bold font-baloo whitespace-nowrap mt-4">Gardening Class</h6>
+				</div>
+
+				<div class="flex flex-col items-center mr-10 mb-2">
+					<img src="/img/music-player.png" class="h-12" alt="Music Programs">
+					<h6 class="text-xl font-bold font-baloo whitespace-nowrap mt-4">Music Programs</h6>
+				</div>
+
+				<div class="flex flex-col items-center mr-10 mb-2">
+					<img src="/img/books.png" class="h-12" alt="Foreign Languages">
+					<h6 class="text-xl font-bold font-baloo whitespace-nowrap mt-4">Foreign Languages</h6>
+				</div>
+
+				<div class="flex flex-col items-center mr-10 mb-2">
+					<img src="/img/basketball.png" class="h-12" alt="Fitness Programs">
+					<h6 class="text-xl font-bold font-baloo whitespace-nowrap mt-4">Fitness Programs</h6>
+				</div>
+
+			</div>
+		</section>
+
+		<section class="pt-20 pb-0 px-5 lg:px-32 relative">
+			<div class="text-center">
+				<h2 class="text-black text-4xl font-baloo font-bold mx-auto">Our Achievement focus</h2>
+			</div>
+			<div class="grid grid-cols-1 lg:grid-cols-12 mt-16">
+
+				<div class="col-span-6">
+					<img src="/img/mission.jpg" class="h-[80%] animate-on-scroll duration-750" alt="lofty creek mission">
+				</div>
+
+				<div class="col-span-6">
+					<h3 class="text-2xl text-slate-700 font-bold font-baloo">Our Mission</h3>
+					<p class="mt-5 text-lg">
+						Our mission is to transform this generation through sound education with a distinctly Christian worldview.
+					</p>
+				</div>
+
+				<div class="col-span-6 mt-10">
+					<h3 class="text-2xl text-slate-700 font-bold font-baloo">Our Vision</h3>
+					<p class="mt-5 text-lg">
+						To provide Bible-centered christian education preparing young people for service to God and Mankind.
+					</p>
+				</div>
+
+				<div class="col-span-6 flex justify-center">
+					<img src="/img/vision.svg" class="h-[60%] animate-on-scroll duration-1000" alt="lofty creek mission">
 				</div>
 			</div>
-		</div>
-	</section>
-	<!-- End testimonial slider second -->
-</main>
+		</section>
+
+	</main>
 </MasterLayout>

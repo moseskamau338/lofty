@@ -1,237 +1,207 @@
 ---
 import MasterLayout from '../layouts/MasterLayout.astro'
-import HeroMain from '../components/HeroMain.astro'
+import HomeGallery from "../components/HomeGallery.vue";
+import Slider from "../components/Slider.vue";
+const response = await fetch(import.meta.env.PUBLIC_CMS_URL+'/items/home_gallery?fields=id,images.directus_files_id');
+const images = await response.json();
+
+const slider_response = await fetch(import.meta.env.PUBLIC_CMS_URL+'/items/homepage_slides?fields=*,image.*');
+const home_sliders = await slider_response.json();
 ---
 <MasterLayout>
-    <HeroMain />
+     <!--hero-->
+    <Slider slides={home_sliders} client:only="vue" />
 
-    <!-- Begin home content -->
-    <main class="home-content">
-        <section class="home-preview">
-            <div class="container">
-                <!-- Begin advantages list -->
-                <div class="row">
-                    <div class="col-md-12">
-                        <ul class="advantages-list">
-                            <li>
-                                <div class="advantages-ico color-2">
-                                    <img src="/img/paper-plane.png" alt="paper-plane">
-                                </div>
-                                <div class="advantages-desc">
-                                    <h4>Learning & Fun</h4>
-                                    <p>We ensure the learning experience is exciting and fun.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="advantages-ico color-4">
-                                    <img src="/img/baby-food.png" alt="baby-food">
-                                </div>
-                                <div class="advantages-desc">
-                                    <h4>Healthy Meal</h4>
-                                    <p>A healthy meal provides the energy required to sustain the jovial kids.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="advantages-ico color-3">
-                                    <img src="/img/mortarboard.png" alt="mortarboard">
-                                </div>
-                                <div class="advantages-desc">
-                                    <h4>Expert Teachers</h4>
-                                    <p>Seasoned teachers meant to provide the ultimate learning.</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- End advantages list -->
-
-                <!-- Begin home preview main -->
-                <div class="row">
-                    <div class="col-sm-6 col-md-4">
-                        <div class="preview-card">
-                            <div class="preview-card-logo">
-                                <a href="about.html"><img src="/img/new/cRoom.jpg" alt="about-prev"></a>
-                            </div>
-                            <div class="preview-card-desc">
-                                <a href="about.html" class="h2">About Us</a>
-                                <p>Designed with kids in mind, LCCS observes very high standards of learning with a holistic child development approach. Given the varied capabilities of our children, we have integrated Competency-Based and Montessori Curricula, all with a Christian worldview.</p>
-                                <a href="/about-us" class="button color-2">Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                        <div class="preview-card">
-                            <div class="preview-card-logo">
-                                <img src="/img/kidsClass.jpg" alt="benefits-prev">
-                            </div>
-                            <div class="preview-card-desc">
-                                <h2>Our Benefits</h2>
-                                <ul class="benefits-list">
-                                    <li class="color-1"><p>Education, games and activities</p></li>
-                                    <li class="color-2"><p>Teaching kids to express their creativity</p></li>
-                                    <li class="color-3"><p>Gifted & Talented Program</p></li>
-                                    <li class="color-4"><p>Music activities for all</p></li>
-                                    <li class="color-5"><p>Learning languages</p></li>
-                                    <li class="color-1"><p>We encourage an honest, open culture</p></li>
-                                    <li class="color-2"><p>We put children first</p></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-4">
-                        <div class="schedule color-2">
-                            <h3>Working Hours</h3>
-                            <p>Please find time visit us during our open hours.</p>
-                            <ul class="schedule-list">
-                                <li>
-                                    <p>Monday <span>8 AM - 5 PM</span></p>
-                                </li>
-                                <li>
-                                    <p>Tuesday <span>8 AM - 5 PM</span></p>
-                                </li>
-                                <li>
-                                    <p>Wednesday <span>8 AM - 5 PM</span></p>
-                                </li>
-                                <li>
-                                    <p>Thursday <span>8 AM - 5 PM</span></p>
-                                </li>
-                                <li>
-                                    <p>Friday <span>7 AM - 4 PM</span></p>
-                                </li>
-                            </ul>
-                            <a href="/contact-us" class="button color-4">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End home preview main -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-5 px-5 lg:px-32 py-20">
+        <div class="flex space-x-4 col-span-4 animate-on-scroll duration-750">
+            <div class="bg-success flex justify-center shrink-0 grow-0 items-center h-20 w-20 rounded-full p-4">
+                <img src="/img/paper-plane.png" alt="">
             </div>
-        </section>
+            <div class="w-full">
+                <h3 class="font-baloo text-black font-black text-2xl">Learning & Fun</h3>
+                <p class="text-slate-400">We ensure the learning experience is exciting and fun.</p>
+            </div>
+        </div>
 
+        <div class="flex space-x-4 col-span-4 animate-on-scroll duration-300">
+            <div class="bg-light-red flex justify-center shrink-0 grow-0 items-center h-20 w-20 rounded-full p-4">
+                <img src="/img/baby-food.png" alt="">
+            </div>
+            <div class="w-full">
+                <h3 class="font-baloo text-black font-black text-2xl">Healthy Meals</h3>
+                <p class="text-slate-400">A healthy meal provides the energy required to sustain the jovial kids.</p>
+            </div>
+        </div>
 
+        <div class="flex space-x-4 col-span-4 animate-on-scroll duration-500" data-duration="1s">
+            <div class="bg-orange flex justify-center shrink-0 grow-0 items-center h-20 w-20 rounded-full p-4">
+                <img src="/img/mortarboard.png" alt="">
+            </div>
+            <div class="w-full">
+                <h3 class="font-baloo text-black font-black text-2xl">Expert Teachers</h3>
+                <p class="text-slate-400">Seasoned teachers meant to provide the ultimate learning.</p>
+            </div>
+        </div>
 
-        <!-- Begin home classes -->
-        <section class="classes-wrap" data-parent-move='true'>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2>Our Classes: <small>these and <a href="/about-us">more</a></small></h2>
-                        <div class="classes-slider">
-                            <div class="slider color-4" id="classes-slider">
-                                <div class="card">
-                                    <div class="classes-preview-card">
-                                        <a href="#" class="classes-logo"><img src="/img/new/cWork2.jpg" alt="classes"></a>
+    </section>
 
-                                        <div class="classes-text py-4" style="padding-top:25px">
-                                            <a href="#!" class="h3">Art Class</a>
-                                            <p>Children will be introduced to art lessons involving drawing, painting and coloring activities.</p>
+    <section class="py-20 px-5 lg:px-20 grid gap-5 grid-cols-1 lg:grid-cols-12">
+        <div class="col-span-4">
+            <img src="/img/new/cRoom.jpg" class="rounded-lg shadow-md shadow-success/40" alt="about us">
+            <div class="mt-5">
+                <h2 class="font-bold text-3xl text-black font-baloo">About Us</h2>
+                <p class="text-slate-400">Designed with kids in mind, LCCS observes very high standards of learning with a holistic child development approach. Given the varied capabilities of our children, we have integrated Competency-Based and Montessori Curricula, all with a Christian worldview.</p>
 
-                                        </div>
-                                    </div>
-                                </div>
+                <button type="button" class="relative mt-5 text-white bg-success font-bold font-baloo focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-md px-5 py-2 text-center inline-flex items-center
+                 after:w-[26%] after:h-full after:absolute
+                 after:bg-slate-800/20 after:right-0 after:rounded-r-md
+                 hover:after:w-[100%] hover:after:rounded-l-md
+                 after:transition-all after:duration-700
+                 ">
+                    <span class="z-10">Details</span>
+                    <svg aria-hidden="true" class="w-5 h-5 ml-3 z-10 -mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
 
-                                <div class="card">
-                                    <div class="classes-preview-card">
-                                        <a href="#!" class="classes-logo"><img src="/img/new/sports1.jpg" alt="classes"></a>
-
-                                        <div class="classes-text py-4" style="padding-top:25px">
-                                            <a href="single-classes.html" class="h3">Sport Section</a>
-                                            <p>The kids will have fun at the large playground with a variety of games such as football, volley ball, rope games e.t.c.</p>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="classes-preview-card">
-                                        <a href="#" class="classes-logo"><img src="/img/swimming.jpg" alt="classes"></a>
-                                        <div class="classes-text py-4" style="padding-top:25px">
-                                            <a href="#!" class="h3">Swimming Class</a>
-                                            <p>Children will enjoy swimming sessions once a week.</p>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="classes-preview-card">
-                                        <a href="#" class="classes-logo"><img src="/img/new/gWork.jpg" alt="classes"></a>
-
-                                        <div class="classes-text py-4" style="padding-top:25px">
-                                            <a href="#" class="h3">Gardening</a>
-                                            <p>Gardening at the school farm will help the kids appreciate nature and develop strong character traits such as patience and help create a sense of responsibility.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="classes-preview-card">
-                                        <a href="#" class="classes-logo"><img src="/img/music.jpg" alt="classes"></a>
-
-                                        <div class="classes-text" style="padding-top:25px">
-                                            <a href="#" class="h3">Music Class</a>
-                                            <p>Through a series of well planned lessons, the child will be taught to play musical instruments in such a way as to glorify God. <br><code>❝But thou art holy, O thou that inhabitest the praises of Israel <small><i>Psalm 22:3</i></small>❞</code></p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+        </div>
+        <div class="col-span-4">
+            <img src="/img/kidsClass.jpg" class="rounded-lg shadow-md shadow-light-red/40" alt="about us">
+            <div class="mt-5">
+                <h2 class="font-bold text-3xl text-black font-baloo">Our Benefits</h2>
+                <div class="text-slate-400 font-normal">
+                    <ul class="flex flex-col space-y-2">
+                        <li class="marker:content-['✔︎'] marker:text-success pl-2">Education, games and activities</li>
+                        <li class="marker:content-['✔︎'] marker:text-orange pl-2">Teaching kids to express their creativity</li>
+                        <li class="marker:content-['✔︎'] marker:text-light-red pl-2">Gifted & Talented Program</li>
+                        <li class="marker:content-['✔︎'] marker:text-purple pl-2">Music activities for all</li>
+                        <li class="marker:content-['✔︎'] marker:text-orange pl-2">Learning languages</li>
+                        <li class="marker:content-['✔︎'] marker:text-success pl-2">We encourage an honest, open culture</li>
+                        <li class="marker:content-['✔︎'] marker:text-blue-500 pl-2">We put children first</li>
+                    </ul>
                 </div>
             </div>
-            <img src="/img/buterfly.png" class="moving-element" alt="buterfly" data-move='plus' data-move-speed='20'>
-            <img src="/img/bush.png" class="bottom-img" alt="bush">
-        </section>
-        <!-- End home classes -->
+        </div>
+        <div class="col-span-4">
+            <div class="p-5 bg-success hover:shadow-md rounded-lg text-white text-center relative">
+                <h3 class="font-bold font-baloo text-xl">Working Hours</h3>
+                <p class="mt-2 text-sm">Please find time visit us during our open hours.</p>
+                <div class="mx-10">
+                    <table class="mt-8 w-full">
+                        <tr><td class="text-left py-4">Monday</td> <td class="text-right">8 AM - 5 PM</td></tr>
+                        <tr><td class="text-left py-4">Tuesday</td> <td class="text-right">8 AM - 5 PM</td></tr>
+                        <tr><td class="text-left py-4">Wednesday</td> <td class="text-right">8 AM - 5 PM</td></tr>
+                        <tr><td class="text-left py-4">Thursday</td> <td class="text-right">8 AM - 5 PM</td></tr>
+                        <tr><td class="text-left py-4">Friday</td> <td class="text-right">7 AM - 4 PM</td></tr>
 
-        <!-- Begin home enroll -->
-        <section class="home-enroll color-2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2>Enroll Your Child To A Class</h2>
-                        <h5 style="color: white;">Join us today to set your child on a path <br>of growth in Christian principles that will help them develop characters pleasing to God and man</h5>
+                    </table>
 
-                        <a href="/contact-us" class="button color-3">Email us today</a>
-                    </div>
+                    <button type="button" class="relative mt-5 text-white bg-light-red hover:bg-light-red font-bold font-baloo focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-md px-5 py-2 text-center inline-flex items-center
+                     after:w-[26%] after:h-full after:absolute
+                     after:bg-slate-800/20 after:right-0 after:rounded-r-md
+                     hover:after:w-[100%] hover:after:rounded-l-md
+                     after:transition-all after:duration-700
+                     ">
+                        <span class="z-10">Contact Us</span>
+                        <svg aria-hidden="true" class="w-5 h-5 ml-3 z-10 -mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
                 </div>
             </div>
-        </section>
-        <!-- End home enroll -->
-        <!-- Begin photo gallery -->
-        <section class="home-gallery color-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2>Photo Gallery</h2>
-                    </div>
-                    <div class="col-md-12 col-lg-12">
-                       <!-- @if($files)
-                            <div class="row" id="MyGallery">
-                                 @foreach ($files as $file)
-                                    <div class="singleGallery col-sm-6 col-md-4 col-lg-3 my-1 pl-0 px-1 ">
-                                        <div class="view overlay zoom bg-dark">
-                                          <img src="/storage/gallery/'.$file) }}" class="img-fluid hoverable" alt="Loading...">
-                                          <div class="mask flex-center waves-effect waves-dark parent-gallery">
-                                            <a class="" href="/storage/gallery/'.$file) }}"><label class="text-light img-focus"><i class="mdi mdi-arrow-expand font-20"></i></label></a>
-                                          </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        @endif -->
-                    </div>
-                    <div class="col-md-12 col-lg-12">
-                        <a href="/gallery" class="button color-4">View More</a>
-                    </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="text-center py-10">
+            <h2 class="text-black font-bold font-baloo text-4xl">Our Classes: these and more</h2>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 px-5 lg:px-32">
+            <div class="col-span-4 animate-on-scroll delay-200 duration-500">
+                <div style="background-image: url('/img/new/cWork2.jpg')" class="rounded-t-xl w-full h-56 bg-cover bg-no-repeat bg-center"></div>
+                <div class="bg-slate-100 p-4 rounded-b-lg shadow">
+                    <h3 class="text-black text-2xl font-baloo font-bold">Art Class</h3>
+                    <p class="mt-2">Children will be introduced to art lessons involving drawing, painting and coloring activities.</p>
                 </div>
             </div>
-            <img src="/img/caterpillar.png" class="bottom-img parallax-img" alt="caterpillar">
-        </section>
-        <!-- End photo gallery -->
 
+            <div class="col-span-4 animate-on-scroll delay-100 duration-1000">
+                <div style="background-image: url('/img/new/sports1.jpg')" class="rounded-t-xl w-full h-56 bg-cover bg-no-repeat bg-center"></div>
+                <div class="bg-slate-100 p-4 rounded-b-lg shadow">
+                    <h3 class="text-black text-2xl font-baloo font-bold">Sports Section</h3>
+                    <p class="mt-2">The kids will have fun at the large playground with a variety of games such as football, volley ball, rope games e.t.c.</p>
+                </div>
+            </div>
 
-    </main>
-    <!-- End home content -->
+            <div class="col-span-4 animate-on-scroll delay-400 duration-750">
+                <div style="background-image: url('/img/swimming.jpg')" class="rounded-t-xl w-full h-56 bg-cover bg-no-repeat bg-center"></div>
+                <div class="bg-slate-100 p-4 rounded-b-lg shadow">
+                    <h3 class="text-black text-2xl font-baloo font-bold">Swimming Class</h3>
+                    <p class="mt-2">Children will enjoy swimming sessions once a week.</p>
+                </div>
+            </div>
+
+            <div class="col-span-4 animate-on-scroll delay-200 duration-1000">
+                <div style="background-image: url('/img/new/gWork.jpg')" class="rounded-t-xl w-full h-56 bg-cover bg-no-repeat bg-center"></div>
+                <div class="bg-slate-100 p-4 rounded-b-lg shadow">
+                    <h3 class="text-black text-2xl font-baloo font-bold">Gardening</h3>
+                    <p class="mt-2">Gardening at the school farm will help the kids appreciate nature and develop strong character traits such as patience and help create a sense of responsibility.</p>
+                </div>
+            </div>
+
+            <div class="col-span-4 animate-on-scroll delay-500 duration-750">
+                <div style="background-image: url('/img/music.jpg')" class="rounded-t-xl w-full h-56 bg-cover bg-no-repeat bg-center"></div>
+                <div class="bg-slate-100 p-4 rounded-b-lg shadow">
+                    <h3 class="text-black text-2xl font-baloo font-bold">Music Class</h3>
+                    <p class="mt-2">Through a series of well planned lessons, the child will be taught to play musical instruments in such a way as to glorify God.
+                        <br>
+                        ❝But thou art holy, O thou that inhabitest the praises of Israel Psalm 22:3❞
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <img src="/img/buterfly.png" class="moving-element" alt="buterfly" data-move="plus" data-move-speed="20">
+    </section>
+
+    <section class="flex flex-col items-center text-center bg-success text-white py-20 mt-20 relative">
+        <img src="/img/bush.png" class="absolute -top-20 right-20" alt="bush">
+
+        <h2 class="font-bold text-4xl font-bold font-baloo">Enroll Your Child To A Class</h2>
+
+        <p class="w-[500px] mt-5 text-lg">
+            Join us today to set your child on a path
+            of growth in Christian principles that will help them develop characters pleasing to God and man.
+        </p>
+
+        <a href="mailto:info@loftycreekchristianschool.org" target="_blank" type="button" class="relative mt-5 text-white bg-orange font-bold font-baloo focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-md px-5 py-2 text-center inline-flex items-center
+                 after:w-[22%] after:h-full after:absolute
+                 after:bg-slate-800/20 after:right-0 after:rounded-r-md
+                 hover:after:w-[100%] hover:after:rounded-l-md
+                 after:transition-all after:duration-700
+                 ">
+                    <span class="z-10">Email Us Today</span>
+                    <svg aria-hidden="true" class="w-5 h-5 ml-3 z-10 -mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </a>
+    </section>
+
+    <section class="flex flex-col items-center text-center bg-amber-400 text-white py-20 relative">
+
+        <h2 class="font-bold text-4xl font-bold font-baloo">Photo Gallery</h2>
+
+        <div class="py-10">
+            <HomeGallery images={images} client:only="vue" />
+        </div>
+
+        <a href="/gallery" class="relative mt-5 text-white bg-light-red font-bold font-baloo focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-md px-5 py-2 text-center inline-flex items-center
+         after:w-[28%] after:h-full after:absolute
+         after:bg-slate-800/20 after:right-0 after:rounded-r-md
+         hover:after:w-[100%] hover:after:rounded-l-md
+         after:transition-all after:duration-700
+         ">
+            <span class="z-10">View More</span>
+            <i class="fas fa-image text-lg ml-3"></i>
+        </a>
+
+        <img src="/img/caterpillar.png" class="absolute bottom-0 right-10" alt="caterpillar">
+    </section>
 
 </MasterLayout>
