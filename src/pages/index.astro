@@ -2,11 +2,33 @@
 import MasterLayout from '../layouts/MasterLayout.astro'
 import HomeGallery from "../components/HomeGallery.vue";
 import Slider from "../components/Slider.vue";
-const response = await fetch(import.meta.env.PUBLIC_CMS_URL+'/items/home_gallery?fields=id,images.directus_files_id');
-const images = await response.json();
 
-const slider_response = await fetch(import.meta.env.PUBLIC_CMS_URL+'/items/homepage_slides?fields=*,image.*');
-const home_sliders = await slider_response.json();
+let images: any[] = [], home_sliders: any[] = []
+
+function handleErrors(response) {
+    if (!response.ok) {
+        throw Error(response.statusText);
+    }
+    return response;
+}
+fetch(import.meta.env.PUBLIC_CMS_URL+'/items/home_gallery?fields=id,images.directus_files_id')
+    .then(handleErrors)
+    .then(async response => {
+        images = await response.json()
+        console.log('Found images: ', images)
+    } )
+    .catch(error => console.log(error) );
+
+
+fetch(import.meta.env.PUBLIC_CMS_URL+'/items/homepage_slides?fields=*,image.*')
+    .then(handleErrors)
+    .then(async response => {
+        home_sliders = await response.json()
+        home_sliders = home_sliders.data
+    } )
+    .catch(error => console.log(error) );
+
+
 ---
 <MasterLayout>
      <!--hero-->
@@ -188,7 +210,7 @@ const home_sliders = await slider_response.json();
         <h2 class="font-bold text-4xl font-bold font-baloo">Photo Gallery</h2>
 
         <div class="py-10">
-            <HomeGallery images={images} client:only="vue" />
+            <HomeGallery client:only="vue" />
         </div>
 
         <a href="/gallery" class="relative mt-5 text-white bg-light-red font-bold font-baloo focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-md px-5 py-2 text-center inline-flex items-center

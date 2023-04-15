@@ -20,12 +20,12 @@
           <div class="swiper-scrollbar"></div>
         </div>
     </section>
-    <section v-else class="py-20 px-10 grid grid-cols-1 lg:grid-cols-12 gap-16 h-[640px]">
+    <section v-else class="py-20 px-10 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:h-[640px]">
         <div class="col-span-6 relative">
             <div class="">
-              <div class="w-full h-full rotate-3 bg-success rounded-lg inset-0 absolute z-0"></div>
+              <div class="w-full md:h-[50%] xl:h-[90%] rotate-3 bg-success rounded-lg inset-0 absolute z-[-1]"></div>
             </div>
-                <img :src="main_image_url" alt="Kindergarten class in session" class="rounded-md shadow-lg border-light-red border-2 z-10">
+              <img src="/img/kids-class.png" alt="Kindergarten class in session" class="rounded-md shadow-lg border-light-red border-2 z-10">
         </div>
         <div class="col-span-6">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-[80%]" viewBox="0 0 1170.246 177.95">
@@ -119,7 +119,6 @@ export default {
       slides: {default: [], type: Array}
     },
 	setup(props) {
-   let main_image_url = import.meta.env.PUBLIC_CMS_URL+'/assets/9aa05e59-a98f-4643-a54d-3a42fec147f9'
 		onMounted(() => {
            const swiper = new Swiper('.swiper', {
             // Optional parameters
@@ -144,7 +143,6 @@ export default {
           });
     })
 
-      return {main_image_url}
 	},
 };
 </script>

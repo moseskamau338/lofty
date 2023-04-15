@@ -13,20 +13,9 @@ const breadcrumbs: Crumb = {
     ]
 }
 
-
-const response = await fetch(import.meta.env.PUBLIC_CMS_URL+'/items/general_gallery?fields=id,images.directus_files_id');
-const genImages = await response.json();
-
-const response2 = await fetch(import.meta.env.PUBLIC_CMS_URL+'/items/school_photos?fields=id,images.directus_files_id');
-const schoolImages = await response2.json();
-
-
 ---
 <MasterLayout>
     <main>
-		<Gallery
-			genImages={genImages}
-			schoolImages={schoolImages}
-			client:only="vue" />
+		<Gallery client:only="vue" />
 	</main>
 </MasterLayout>

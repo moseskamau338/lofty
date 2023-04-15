@@ -1,17 +1,15 @@
 ---
-
+import MobileSidebar from "./MobileSidebar.vue";
 ---
 
  <div class="flex justify-between bg-navy py-3 px-5 lg:px-32 text-white font-light">
     <h3 class="hidden md:block font-baloo">Welcome to our kindergarten</h3>
     <img class="md:hidden h-20" src="/img/logos/logo-for-dark.svg" alt="">
-    <h3 class="hidden md:block">Portal</h3>
-    <button class="md:hidden bg-white/40 hover:bg-white/50 focus:ring-white focus:ring-2 hover:scale-105 mt-5 flex justify-center items-center h-8 w-8 shrink-0 grow-0 rounded-full text-brand-navy">
-        <i class="fas fa-bars"></i>
-    </button>
+    
+    <MobileSidebar client:only="vue" />
 </div>
 
-<div class="hidden md:flex px-32 flex items-center space-x-12 text-lg py-5">
+<div class="hidden lg:flex px-32 flex items-center space-x-12 text-lg py-5">
     <a href="#" class="w-56">
         <img src="/img/logos/logo-wide.png" alt="">
     </a>
