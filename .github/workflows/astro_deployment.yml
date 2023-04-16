@@ -30,7 +30,7 @@ env:
 
 jobs:
   build:
-    name: Build
+    name: Build & Deploy
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -64,12 +64,6 @@ jobs:
       - name: Build with Astro
         run: npm run build
         working-directory: ${{ env.BUILD_PATH }}
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    name: Deploy
-    steps:
       - name: Check files in build path
         run: ls ${{ env.BUILD_PATH }}
       - name: Sync distribution files - ${{ env.BUILD_PATH }}
@@ -82,3 +76,5 @@ jobs:
           protocol: ftp
           local-dir: ${{ env.BUILD_PATH }}/dist/
           server-dir: /
+
+    
