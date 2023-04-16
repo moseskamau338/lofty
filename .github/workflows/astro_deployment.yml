@@ -70,7 +70,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy
     steps:
-      - name: Sync distribution files
+      - name: Sync distribution files - ${{ env.BUILD_PATH }}
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ftp.loftycreekchristianschool.org
