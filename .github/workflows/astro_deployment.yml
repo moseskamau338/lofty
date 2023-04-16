@@ -76,5 +76,7 @@ jobs:
           server: ftp.loftycreekchristianschool.org
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          localDir: ${{ env.BUILD_PATH }}/dist
-          remoteDir: '/'
+          port: 21
+          protocol: ftp
+          local-dir: ${{ env.BUILD_PATH }}/dist
+          server-dir: /
