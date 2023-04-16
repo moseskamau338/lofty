@@ -94,7 +94,6 @@ export default {
         }
 
         function setupSchoolGallery(){
-            console.log('Setup files: ', school_image_urls.value)
             const $lgContainer = document.getElementById("inline-gallery-container");
 
                 const inlineGallery = lightGallery($lgContainer, {
