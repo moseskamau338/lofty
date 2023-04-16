@@ -78,27 +78,27 @@ const breadcrumbs: Crumb = {
 
 				<img src="/img/bee.png" class="absolute top-0 right-20 animate-bounce duration-30" alt="">
 
-				<form class="grid grid-cols-1 lg:grid-cols-12 gap-2 mt-5">
+				<form action="mailto:info@loftycreekchristianschool.org" method="POST" enctype="multipart/form-data" name="EmailForm" class="grid grid-cols-1 lg:grid-cols-12 gap-2 mt-5">
 					<div class="col-span-6">
 						<label for="name" class="block mb-2 text-sm font-medium">Name</label>
-						<input type="text" id="name" class="prose prose-base text-white block py-2 px-3 w-full text-sm bg-white/10 rounded-lg border border-gray-300 focus:ring-white focus:border-white placeholder:text-white">
+						<input type="text" required id="name" class="prose prose-base text-white block py-2 px-3 w-full text-sm bg-white/10 rounded-lg border border-gray-300 focus:ring-white focus:border-white placeholder:text-white">
 					</div>
 					<div class="col-span-6">
 						<label for="email" class="block mb-2 text-sm font-medium">Email</label>
-						<input type="text" id="email" class="prose prose-base text-white block py-2 px-3 w-full text-sm bg-white/10 rounded-lg border border-gray-300 focus:ring-white focus:border-white placeholder:text-white">
+						<input type="text" required id="email" name="email" class="prose prose-base text-white block py-2 px-3 w-full text-sm bg-white/10 rounded-lg border border-gray-300 focus:ring-white focus:border-white placeholder:text-white">
 					</div>
 					<div class="col-span-6">
 						<label for="subject" class="block mb-2 text-sm font-medium">Subject</label>
-						<input type="text" id="subject" class="prose prose-base text-white block py-2 px-3 w-full text-sm bg-white/10 rounded-lg border border-gray-300 focus:ring-white focus:border-white placeholder:text-white">
+						<input type="text" name="subject" required id="subject" class="prose prose-base text-white block py-2 px-3 w-full text-sm bg-white/10 rounded-lg border border-gray-300 focus:ring-white focus:border-white placeholder:text-white">
 					</div>
 					<div class="col-span-12">
 						<label for="message" class="block mb-2 text-sm font-medium">Your message</label>
-						<textarea id="message" rows="4" class="prose prose-base text-white block p-2.5 w-full text-sm bg-white/10 rounded-lg border border-gray-200 focus:ring-white focus:border-white placeholder:text-white" placeholder="Your message..."></textarea>
+						<textarea id="message" name="message" required rows="4" class="prose prose-base text-white block p-2.5 w-full text-sm bg-white/10 rounded-lg border border-gray-200 focus:ring-white focus:border-white placeholder:text-white" placeholder="Your message..."></textarea>
 
 					</div>
 
 					<div class="col-span-12">
-						<button type="button" class="relative mt-5 text-white bg-orange font-bold font-baloo focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-md px-5 py-2 text-center inline-flex items-center
+						<button type="submit" class="relative mt-5 text-white bg-orange font-bold font-baloo focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-md px-5 py-2 text-center inline-flex items-center
 						 after:w-[22%] after:h-full after:absolute
 						 after:bg-slate-800/20 after:right-0 after:rounded-r-md
 						 hover:after:w-[100%] hover:after:rounded-l-md
