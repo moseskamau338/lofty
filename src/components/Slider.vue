@@ -72,7 +72,7 @@
                 </p>
 
 
-            <button type="button" class="relative mt-4 text-white bg-light-red hover:bg-light-red font-bold font-baloo focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-md px-5 py-2 text-center inline-flex items-center
+            <a href="/contact-us" class="relative mt-4 text-white bg-light-red hover:bg-light-red font-bold font-baloo focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-md px-5 py-2 text-center inline-flex items-center
                after:w-[26%] after:h-full after:absolute
                after:bg-slate-800/20 after:right-0 after:rounded-r-md
                hover:after:w-[100%] hover:after:rounded-l-md
@@ -80,7 +80,7 @@
                ">
                   <span class="z-10">Apply Today</span>
                   <svg aria-hidden="true" class="w-5 h-5 ml-3 z-10 -mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-              </button>
+              </a>
 
 
             <div class="flex flex-wrap mt-12">
