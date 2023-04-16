@@ -73,7 +73,7 @@ jobs:
       - name: Sync distribution files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          server: ftp.bethraphafoundation.org
+          server: ftp.loftycreekchristianschool.org
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           localDir: ${{ env.BUILD_PATH }}/dist
