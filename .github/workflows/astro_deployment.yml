@@ -70,6 +70,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy
     steps:
+      - name: Check files in build path
+        run: ls ${{ env.BUILD_PATH }}
       - name: Sync distribution files - ${{ env.BUILD_PATH }}
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
