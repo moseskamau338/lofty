@@ -18,17 +18,12 @@
                 <p>Explore all that the children do daily</p>
             </div>
             <template v-if="general_image_urls.length > 0">
-                <div class="columns-4 mt-10" id="animated-thumbnails-gallery">
-                    <!--
-                             data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@tobbes_rd' >Tobias Rademacher </a></h4><p> Location - <a href='https://unsplash.com/s/photos/puezgruppe%2C-wolkenstein-in-gr%C3%B6den%2C-s%C3%BCdtirol%2C-italien'>Puezgruppe, Wolkenstein in Gröden, Südtirol, Italien</a>layers of blue.</p>">
-                         -->
-                        <a v-for="image in general_image_urls" data-lg-size="1600-1067" class="gallery-item"
-                           :data-src="image.src">
-                            <img alt="layers of blue." class="img-responsive w-full"
-                                 :src="image.thumb"/>
-                        </a>
-
-
+                <div v-if="general_image_urls.length > 0" class="spotlight-group columns-4 mt-10 space-y-2 px-20">
+                    <a v-for="image in general_image_urls.slice(0,7)" class="spotlight"
+                       :data-src="image.src">
+                        <img alt="" class="img-responsive w-full rounded hover:shadow-lg transition-all mb-4"
+                             :src="image.thumb"/>
+                    </a>
                 </div>
             </template>
             <div v-else class="columns-12 mt-10 flex flex-col items-center justify-center">
@@ -39,14 +34,17 @@
 
 </template>
 
-<script lang="ts">
+<script>
 import lightGallery from "lightgallery";
 import lgZoom from "lightgallery/plugins/zoom";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
+ import Spotlight from "spotlight.js";
 //css
 import 'lightgallery/css/lg-zoom.css'
 import 'lightgallery/css/lg-thumbnail.css'
 import 'lightgallery/css/lightgallery-bundle.min.css'
+ import "spotlight.js/dist/css/spotlight.min.css";
+
 import {onMounted, ref, watch} from "vue";
 import SvgIcons from "./SvgIcons.vue";
 
@@ -70,7 +68,7 @@ export default {
                entry.images.forEach((image) => {
                    general_image_urls.value.push({
                        src:`${baseUri}/${image.directus_files_id}?quality=80`,
-                       thumb:`${baseUri}/${image.directus_files_id}?fit=cover&width=240&quality=80`,
+                       thumb:`${baseUri}/${image.directus_files_id}?quality=80`,
                    })
                })
 
