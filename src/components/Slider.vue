@@ -1,5 +1,5 @@
 <template>
-    <section v-if="slides.length > 0" class="bg-brown h-[640px]">
+    <section v-if="true" class="bg-brown h-[640px]">
         <!-- Slider main container -->
         <div class="swiper text-white">
           <!-- Additional required wrapper -->
@@ -107,41 +107,13 @@
 </template>
 
 <script lang="ts">
-  // core version + navigation, pagination modules:
-  import Swiper, { Navigation, Pagination } from 'swiper';
-  // import Swiper and modules styles
-  import 'swiper/css';
-  import 'swiper/css/navigation';
-  import 'swiper/css/pagination';
   import {onMounted} from "vue";
 export default {
     props:{
       slides: {default: [], type: Array}
     },
 	setup(props) {
-		onMounted(() => {
-           const swiper = new Swiper('.swiper', {
-            // Optional parameters
-            direction: 'vertical',
-            loop: true,
 
-            // If we need pagination
-            pagination: {
-              el: '.swiper-pagination',
-            },
-
-            // Navigation arrows
-            navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
-            },
-
-            // And if we need scrollbar
-            scrollbar: {
-              el: '.swiper-scrollbar',
-            },
-          });
-    })
 
 	},
 };
