@@ -1,5 +1,5 @@
 <template>
-    <section v-if="true" class="bg-brown h-[640px]">
+    <section v-if="false" class="bg-brown h-[640px]">
         <!-- Slider main container -->
         <div class="swiper text-white">
           <!-- Additional required wrapper -->
