@@ -8,7 +8,7 @@
 
         <div class="col-span-6 px-3 py-10">
             <h1 class="text-4xl font-bold font-baloo text-black">Our School</h1>
-            <p>Lofty Creek Christian School is an integrated Edu-care center for children from all walks of life aged between 2 and 5 years. We are located along Wambaa road, 0.5km off the Nairobi- Nakuru Highway at Muthiga’s Munyua road. Designed with kids in mind, LCCS observes very high standards of learning with a holistic child development approach. Given the varied capabilities of our children, we have integrated Competency-Based and Montessori Curricula, all with a Christian worldview.</p>
+            <p>At LCCS, we believe that learning should be fun. We create an environment where learners feel appreciated and seen. We celebrate every milestone that our young learners make. We cherish every moment we spend together because we get to create memories that will go on beyond us. Take a sneak-peek of some of those wonderful moments in our gallery.</p>
         </div>
     </div>
 
