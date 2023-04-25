@@ -65,7 +65,7 @@
             <h3 class="font-serif text-xl text-brown font-bold tracking-widest">Christian School</h3>
 
              <p class="prose prose-slate prose-base mt-5">
-                Welcome to Lofty Creek Christian School our Christian kindergarten school, where your child will be nurtured in a safe, loving, and faith-based environment. Our goal is to provide a holistic learning
+                Welcome to Lofty Creek Christian School, where your child will be nurtured in a safe, loving, and faith-based environment. Our goal is to provide a holistic learning
                 experience that fosters the development of young minds, spirits, and bodies.
 
              </p>
