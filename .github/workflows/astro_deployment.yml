@@ -33,7 +33,7 @@ jobs:
     name: Build & Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: 🚚Checkout Latest Code
         uses: actions/checkout@v3
       - name: Detect package manager
         id: detect-package-manager
@@ -66,14 +66,14 @@ jobs:
         working-directory: ${{ env.BUILD_PATH }}
       - name: Check files in build path
         run: ls ${{ env.BUILD_PATH }}
-      - name: Sync distribution files - ${{ env.BUILD_PATH }}
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      - name: 📂 Sync distribution files - ${{ env.BUILD_PATH }}
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ftp.loftycreekchristianschool.org
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
-          protocol: ftps
+          protocol: ftp
           local-dir: ${{ env.BUILD_PATH }}/dist/
           server-dir: /
 
