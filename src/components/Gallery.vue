@@ -19,7 +19,7 @@
             </div>
             <template v-if="general_image_urls.length > 0">
                 <div v-if="general_image_urls.length > 0" class="spotlight-group columns-4 mt-10 space-y-2 px-20">
-                    <a v-for="image in general_image_urls.slice(0,7)" class="spotlight"
+                    <a v-for="image in general_image_urls" class="spotlight"
                        :data-src="image.src">
                         <img alt="" class="img-responsive w-full rounded hover:shadow-lg transition-all mb-4"
                              :src="image.thumb"/>
